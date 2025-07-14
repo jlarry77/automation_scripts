@@ -73,13 +73,14 @@ View Logs:
 ```
 docker compose logs -f
 ```
-Troubleshooting
-"docker compose command not found": Ensure Docker Compose is installed.
+Troubleshooting:
 
-"permission denied while trying to connect to the Docker daemon socket": Add your user to the docker group and re-login: sudo usermod -aG docker $USER.
+- "docker compose command not found": Ensure Docker Compose is installed.
 
-Port 9100 not accessible: Check your VM's firewall rules (e.g., ufw status) to ensure port 9100 is open.
+- "permission denied while trying to connect to the Docker daemon socket": Add your user to the docker group and re-login: sudo usermod -aG docker $USER.
 
-Container not running: Check docker logs <container_name> for errors.
+- Port 9100 not accessible: Check your VM's firewall rules (e.g., ufw status) to ensure port 9100 is open.
+
+- Container not running: Check docker logs <container_name> for errors.
 
 
