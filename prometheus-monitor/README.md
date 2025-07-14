@@ -60,3 +60,26 @@ To manage the Node Exporter, navigate into the created `vm_monitor` directory:
 
 ```bash
 cd vm_monitor
+```
+Stop the Node Exporter:
+```
+docker compose down
+```
+Restart the Node Exporter:
+```
+docker compose restart
+```
+View Logs:
+```
+docker compose logs -f
+```
+Troubleshooting
+"docker compose command not found": Ensure Docker Compose is installed.
+
+"permission denied while trying to connect to the Docker daemon socket": Add your user to the docker group and re-login: sudo usermod -aG docker $USER.
+
+Port 9100 not accessible: Check your VM's firewall rules (e.g., ufw status) to ensure port 9100 is open.
+
+Container not running: Check docker logs <container_name> for errors.
+
+
