@@ -1,4 +1,7 @@
 # Linux Automation Scripts
+![Ubuntu](https://img.shields.io/badge/OS-Ubuntu-E95420?logo=ubuntu&logoColor=white)
+![Bash](https://img.shields.io/badge/Scripting-Bash-4EAA25?logo=gnubash&logoColor=white)
+
 
 This repository contains a collection of shell scripts designed to automate common administrative tasks, software installations, and infrastructure setup on Linux systems, primarily focusing on Ubuntu distributions.
 
