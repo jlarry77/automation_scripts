@@ -1,4 +1,4 @@
-LAMP Stack Installation Script
+# LAMP Stack Installation Script
 This Bash script automates the installation of a Linux, Apache, MariaDB (as a MySQL replacement), and PHP stack on Debian-based Linux distributions (like Ubuntu).
 
 Features
@@ -16,9 +16,10 @@ sudo privileges.
 An active internet connection to download packages.
 
 How to Use
-Save the script:
+1. Save the script:
 Save the script content to a file, for example, install_lamp.sh.
 
+```
 Bash
 
 #!/bin/bash
@@ -75,41 +76,53 @@ sudo systemctl restart apache2.service
 check_command "Apache2 restart"
 
 echo "LAMP stack installation script completed. Please remember to run 'sudo mysql_secure_installation'."
-Make the script executable:
 
+```
+# 2. Make the script executable:
+
+```
 Bash
 
 chmod +x install_lamp.sh
-Run the script:
+```
 
+# 3. Run the script:
+
+```
 Bash
 
 sudo ./install_lamp.sh
+```
 The script will output its progress and any errors.
 
-Post-Installation Steps (Important!)
+# Post-Installation Steps (Important!)
 After the script completes, you must manually secure your MariaDB installation:
 
+```
 Bash
 
 sudo mysql_secure_installation
+
+```
 This interactive command will guide you through setting a root password, removing anonymous users, disallowing remote root login, and removing the test database. Follow the prompts carefully.
 
-Verification
+# Verification
 After the script runs and you've secured MariaDB:
 
-Check Apache: Open your web browser and navigate to http://localhost/ (or your server's IP address). You should see the default Apache "It works!" page.
+1. Check Apache: Open your web browser and navigate to http://localhost/ (or your server's IP address). You should see the default Apache "It works!" page.
 
-Check PHP: Create a test PHP file in your web root (/var/www/html/):
-
+2. Check PHP: Create a test PHP file in your web root (/var/www/html/):
+```
 Bash
 
 sudo nano /var/www/html/info.php
+```
 Add the following content:
-
+```
 PHP
 
 <?php
 phpinfo();
 ?>
+```
 Save and exit (Ctrl+X, Y, Enter for nano). Then, in your browser, go to http://localhost/info.php. You should see the PHP information page. Remember to delete info.php after verification for security reasons.
