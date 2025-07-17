@@ -47,7 +47,6 @@ Save the script:
 Save the script content to a file, for example, install_tailscale.sh.
 
 ```
-bash
 #!/bin/bash
 
 # This script automates the installation of Tailscale on Fedora (specifically for Fedora Version 41 and Later).
@@ -108,13 +107,13 @@ echo "You can check Tailscale status with: tailscale status"
 # Make the script executable:
 Open your terminal and navigate to the directory where you saved the script. Then, run:
 ```
-bash
+
 chmod +x install_tailscale.sh
 ```
 Run the script:
 Execute the script using sudo:
 ```
-bash
+
 sudo ./install_tailscale.sh
 ```
 
@@ -126,7 +125,7 @@ Here's a step-by-step explanation of what the script does:
 1. Add the official Tailscale repository:
 
 ```
-bash
+
 sudo dnf config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 ```
 
@@ -134,14 +133,14 @@ This command adds the official Tailscale DNF repository to your system's package
 
 2. Install Tailscale package:
 ```
-bash
+
 sudo dnf install -y tailscale
 ```
 This command installs the tailscale package from the newly added repository. The -y flag automatically confirms any prompts during the installation.
 
 3. Use Systemctl to enable and start the Tailscale service:
 ```
-bash
+
 sudo systemctl enable --now tailscaled
 ```
 This command performs two actions:
@@ -152,7 +151,7 @@ This command performs two actions:
 
 4. Bring up Tailscale and authenticate:
 ```
-bash
+
 sudo tailscale up
 ```
 This is the crucial step for connecting your device to your Tailscale network (your "tailnet"). When run, it will output a URL to the console. You must open this URL in a web browser and log in with your Tailscale account to authenticate the device. Once authenticated, your device will appear in your Tailscale admin console.
@@ -161,7 +160,7 @@ Note: If you have an authentication key (e.g., for automated deployments), you c
 
 5. Enable Tailscale SSH:
 ```
-bash
+
 sudo tailscale up --ssh
 ```
 This command enables Tailscale's built-in SSH functionality on the current node. This allows you to use Tailscale for secure SSH access to other devices on your tailnet, managed directly through your Tailscale admin console policy. This step might fail if the device isn't fully authenticated yet or if there are specific Tailscale network policies preventing it.
@@ -198,14 +197,14 @@ After the script completes and you've authenticated in your browser, you can ver
 
 Check Tailscale status:
 ```
-bash
+
 tailscale status
 ```
 This command will show you the connection status, your Tailscale IP address, and other devices on your tailnet.
 
 Check Tailscale IP address:
 ```
-bash
+
 tailscale ip -4
 ```
 This will display your device's Tailscale IPv4 address.
