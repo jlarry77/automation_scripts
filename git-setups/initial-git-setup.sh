@@ -24,7 +24,7 @@ check_command "apt update"
 
 echo "Installing Git..."
 sudo apt install git -y
-check_command "Git Installation"
+check_command "Git installation"
 
 # 2.  Configure your Git username:
 read -p "Enter your Github User Name:  " git_username
@@ -41,7 +41,7 @@ check_command "Set e-mail"
 # 4.  Generate a new SSH Key Pair:
 echo "Setting a new SSH Key.  You can press 'Enter' to accept defaults..."
 ssh-keygen -t ed25519 -C "$git_email"
-check_command "Set SSH"
+check_command "SSH key generation"
 
 # 5.  Display SSH Key for Github authorization:
 echo "Please copy the key below, and use it to pair in Github's Interface..."
@@ -51,12 +51,12 @@ read -p "Press Enter to continue..."
 # 6.  Start the SSH Agent:
 echo "Starting SSH Agent..."
 eval "$(ssh-agent -s)"
-check_command "Start SSH"
+check_command "Start SSH agent"
 
 # 7.  Add Private Key to SSH Agent:
 echo "Adding Private Key to SSH Agent..."
 ssh-add ~/.ssh/id_ed25519
-check_command "Add SSH"
+check_command "Adding private key to SSH agent"
 
 # 8.  Test Connection to github:
 echo "Checking Connection to Github..."
@@ -66,5 +66,5 @@ check_command "Test Connection"
 # 9.  Clone Repository
 read -p "Please add the full URL to the Repository you would like to clone:  " git_repo
 git clone "$git_repo"
-echo "Git Repository set to: $(git clone)"
 check_command "Clone Repository"
+echo "Repository '$git_repo' cloned successfully."
