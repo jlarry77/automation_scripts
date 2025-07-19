@@ -1,8 +1,6 @@
 #!/bin/bash
 
-###  The purpose of this script is to install and set up a git SSH Key and repository on an Ubuntu Machine.  If you already have connected
-###		your machine to github through ssh, there is an automation script called 'new-repo-setup.sh' that will walk you through
-###		setting up a new repository, that skips the ssh-keygen section.
+###  The purpose of this script is to install and set up a git SSH Key and repository on an Ubuntu Machine.
 
 
 # - - - Error Handling Fucntion - - - #
