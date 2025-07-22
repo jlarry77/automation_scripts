@@ -1,4 +1,4 @@
-### This script is intended to be run from the "automation_scripts" directory, and will search each subdirectory for .sh files
+### This script is intended to be run from the automation_scripts directory, and will search each subdirectory for .sh files
 ###	and prompt the user to run each available script.  The intented use is for a new server/virtual machine, the user can 
 ###	download the entire automation_scripts directory, and then choose which elements to install.
 
@@ -9,7 +9,7 @@
 ## Determine the Absolute Path of the directory where the current script resides, and 
 ##	store the results in the variable: SCRIPT_DIR
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]")" && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 echo "Searching for installable scripts in each subdirectory..."
 
