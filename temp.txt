@@ -1,8 +1,0 @@
-docker-containerd-install
-git-setups
-kube-install
-lamp_install
-port_scanner
-prometheus-monitor
-tailscale-fedora-install
-tailscale-ubuntu-install
